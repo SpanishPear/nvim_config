@@ -9,6 +9,9 @@ endif
 " install plugins
 call plug#begin('~/.vim/plugged')
 
+  " git
+  Plug 'lewis6991/gitsigns.nvim'
+
 	" Collection of common configurations for the Nvim LSP client
 	Plug 'neovim/nvim-lspconfig'
 
@@ -57,6 +60,17 @@ call plug#begin('~/.vim/plugged')
   
   " devicons
   Plug 'kyazdani42/nvim-web-devicons'
+
+  Plug 'romgrk/barbar.nvim'
+
+  " nvimtree
+  Plug 'kyazdani42/nvim-tree.lua'
+
+  " statusline
+  Plug 'feline-nvim/feline.nvim'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/rust-analyzer-lsp.vim
+source $HOME/.config/nvim/plugins/nvimtree.vim
+source $HOME/.config/nvim/plugins/barbar.vim
+source $HOME/.config/nvim/plugins/feline.vim
