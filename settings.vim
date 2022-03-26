@@ -35,5 +35,6 @@ highlight HighlightedyankRegion cterm=reverse gui=reverse
 
 " vimwiki
 set nocompatible
+set number
 filetype plugin on
 syntax on
