@@ -18,6 +18,9 @@ call plug#begin('~/.vim/plugged')
   " A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI. 
   Plug 'tami5/lspsaga.nvim'
 
+  " highlight yanks
+  Plug 'machakann/vim-highlightedyank'
+
 	" Completion framework
 	Plug 'hrsh7th/nvim-cmp'
 
@@ -74,3 +77,5 @@ source $HOME/.config/nvim/plugins/rust-analyzer-lsp.vim
 source $HOME/.config/nvim/plugins/nvimtree.vim
 source $HOME/.config/nvim/plugins/barbar.vim
 source $HOME/.config/nvim/plugins/feline.vim
+source $HOME/.config/nvim/plugins/nvim-treesitter.vim
+
