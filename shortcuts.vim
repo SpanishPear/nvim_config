@@ -1,5 +1,5 @@
 " Code navigation shortcuts
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
@@ -36,8 +36,6 @@ nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_sag
 nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
 " show
-nnoremap <silent><leader>cd <cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>
-
 nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 " only show diagnostic if cursor is over the area
 nnoremap <silent><leader>cc <cmd>lua require('lspsaga.diagnostic').show_cursor_diagnostics()<CR>
@@ -62,6 +60,13 @@ imap <silent><script><expr> <C-T> copilot#Accept("")
 augroup lspsaga_filetypes
   autocmd!
   autocmd FileType LspsagaHover nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaCodeAction nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaDiagnostic nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaFinder nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaFloaterm nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaHover nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaRename nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
+  autocmd FileType LspsagaSignatureHelp  nnoremap <buffer><nowait><silent> <Esc> <cmd>close!<cr>
 augroup END
 
 " Find files using Telescope command-line sugar.

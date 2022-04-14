@@ -8,7 +8,15 @@ endif
 
 " install plugins
 call plug#begin('~/.vim/plugged')
+    
+  Plug 'tpope/vim-obsession'
+  Plug 'dhruvasagar/vim-prosession'
+  Plug 'maxmellon/vim-jsx-pretty'
 
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  
   " git
   Plug 'lewis6991/gitsigns.nvim'
 
@@ -18,8 +26,8 @@ call plug#begin('~/.vim/plugged')
   " A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI. 
   Plug 'tami5/lspsaga.nvim'
 
-  " highlight yanks
-  Plug 'machakann/vim-highlightedyank'
+ 	" highlight yanks
+	Plug 'machakann/vim-highlightedyank'
 
 	" Completion framework
 	Plug 'hrsh7th/nvim-cmp'
@@ -48,7 +56,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
+  Plug 'p00f/nvim-ts-rainbow'
 	" Color scheme used in the GIFs!
 	" Plug 'arcticicestudio/nord-vim'
 

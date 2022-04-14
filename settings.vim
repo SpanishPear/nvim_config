@@ -17,9 +17,8 @@ set updatetime=100
 set nowrap
 set foldmethod=syntax
 set backupdir=~/.cache/vim
+set mouse=a
 
-" 80 col borrder
-set cc=80
 " setup the colour schemes
 "termgui colors is true collour, not 256 color
 if (has("termguicolors"))
