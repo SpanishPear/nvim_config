@@ -1,5 +1,4 @@
-
-" autoinstall vim-plug
+" autoinstall vim-plug, if not exists
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -50,17 +49,15 @@ call plug#begin('~/.vim/plugged')
 	" Snippet engine
 	Plug 'hrsh7th/vim-vsnip'
 
-	" Fuzzy finder[<0;62;36m]
+	" Fuzzy finder
 	" Optional
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'p00f/nvim-ts-rainbow'
-	" Color scheme used in the GIFs!
-	" Plug 'arcticicestudio/nord-vim'
 
-    "gruvbox theme
+  "gruvbox theme
 	Plug 'morhetz/gruvbox'
 
 	"github copilot
@@ -72,6 +69,7 @@ call plug#begin('~/.vim/plugged')
   " devicons
   Plug 'kyazdani42/nvim-web-devicons'
 
+  " tabs
   Plug 'romgrk/barbar.nvim'
 
   " nvimtree

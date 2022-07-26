@@ -2,6 +2,7 @@
 " this removes the jitter when warnings/errors flow in
 set signcolumn=yes
 
+" make copilot stop expanding onspace
 let g:copilot_no_tab_map=v:true
 let g:copilot_assume_mapped=v:true
 
@@ -24,6 +25,8 @@ set mouse=a
 if (has("termguicolors"))
   set termguicolors
 endif
+
+" colour schemes
 set background=dark
 colorscheme gruvbox
 
