@@ -19,6 +19,7 @@ set nowrap
 set foldmethod=syntax
 set backupdir=~/.cache/vim
 set mouse=a
+let g:rust_fold = 2
 
 " setup the colour schemes
 "termgui colors is true collour, not 256 color
@@ -38,6 +39,7 @@ highlight HighlightedyankRegion cterm=reverse gui=reverse
 let g:UltiSnipsExpandTrigger="<tab>"  " use <Tab> to trigger autocompletion
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.tera set ft=jinja
 
 " vimwiki
 set nocompatible

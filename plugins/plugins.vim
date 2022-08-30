@@ -15,6 +15,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'neovim/nvim-lspconfig'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+  " vim suround
+  Plug 'tpope/vim-surround.vim'
   
   " git
   Plug 'lewis6991/gitsigns.nvim'
@@ -80,7 +83,9 @@ call plug#begin('~/.vim/plugged')
 
 	"github copilot
 	Plug 'github/copilot.vim'
-
+    "rust
+    Plug 'rust-lang/rust.vim'
+    
   " Extentions to built-in LSP, for example, providing type inlay hints
   Plug 'nvim-lua/lsp_extensions.nvim'
   
@@ -95,6 +100,9 @@ call plug#begin('~/.vim/plugged')
 
   " statusline
   Plug 'feline-nvim/feline.nvim'
+
+  " jinja
+  Plug 'lepture/vim-jinja'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/lsp_setup.vim
