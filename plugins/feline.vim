@@ -1,3 +1,4 @@
+set termguicolors
 lua <<EOF
 
 local feline_gruvbox = {
@@ -17,6 +18,7 @@ local feline_gruvbox = {
 }
 
 require('gitsigns').setup()
+
 
 local feline = require('feline')
 feline.setup()

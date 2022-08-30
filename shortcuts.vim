@@ -45,8 +45,10 @@ nnoremap <silent><leader>cc <cmd>lua require('lspsaga.diagnostic').show_cursor_d
 nnoremap <silent> g] :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> g[ :Lspsaga diagnostic_jump_prev<CR>
 
+" nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>
+nnoremap gd <cmd>lua require('goto-preview').goto_preview_definition()<CR>
 
-nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 
 " float terminal also you can pass the cli command in open_float_terminal function
 " alt-d will open the term, and in term mode, it will kill the term

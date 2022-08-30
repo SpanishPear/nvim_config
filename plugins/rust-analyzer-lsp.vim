@@ -63,7 +63,6 @@ end
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
         inlay_hints = {
             show_parameter_hints = false,
             -- only_current_line = true,
@@ -107,6 +106,25 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
     })
 end
 
+local function filter(arr, fn)
+  if type(arr) ~= "table" then
+    return arr
+  end
+
+  local filtered = {}
+  for k, v in pairs(arr) do
+    if fn(v, k, arr) then
+      table.insert(filtered, v)
+    end
+  end
+
+  return filtered
+end
+
+local function filterReactDTS(value)
+  return string.match(value.uri, 'react/index.d.ts') == nil
+end
+
 nvim_lsp.tsserver.setup({
     on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
@@ -119,6 +137,16 @@ nvim_lsp.tsserver.setup({
         buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
         on_attach(client, bufnr)
     end,
+    handlers = {
+      ['textDocument/definition'] = function(err, result, method, ...)
+        -- if vim.tbl_islist(result) and #result > 1 then
+        local filtered_result = filter(result, filterReactDTS)
+        return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+        -- end
+
+        -- vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+      end
+  }
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -179,6 +207,9 @@ cmp.setup({
     { name = 'buffer' },
   },
 })
+
+-- setup definition jumping 
+require'goto-preview'.setup {}
 EOF
 
 " Set updatetime for CursorHold

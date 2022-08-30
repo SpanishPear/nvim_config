@@ -19,9 +19,27 @@ call plug#begin('~/.vim/plugged')
   " git
   Plug 'lewis6991/gitsigns.nvim'
 
+  " markdown TOC
+  Plug 'mzlogin/vim-markdown-toc'
+
+
+  " zen mode for vim
+  Plug 'junegunn/goyo.vim' 
+
 	" Collection of common configurations for the Nvim LSP client
 	Plug 'neovim/nvim-lspconfig'
 
+  " Used for common vim snippets
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
+  " markdown preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+  " definition preview
+  Plug 'rmagatti/goto-preview'
+
+   
   " A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI. 
   Plug 'tami5/lspsaga.nvim'
 

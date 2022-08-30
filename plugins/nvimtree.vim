@@ -1,35 +1,3 @@
-let g:nvim_tree_icons = {
-\ 'default': '',
-\ 'symlink': '',
-\ 'git': {
-\   'unstaged': "✗",
-\   'staged': "✓",
-\   'unmerged': "",
-\   'renamed': "➜",
-\   'untracked': "★",
-\   'deleted': "",
-\   'ignored': "◌"
-\   },
-\ 'folder': {
-\   'arrow_closed': "",
-\   'arrow_open': "",
-\   'default': "",
-\   'open': "",
-\   'empty': "",
-\   'empty_open': "",
-\   'symlink': "",
-\   'symlink_open': "",
-\   },
-\   'lsp': {
-\     'hint': "",
-\     'info': "",
-\     'warning': "",
-\     'error': "",
-\   },
-\}
-
-let g:nvim_tree_indent_markers = 1 
-
 lua <<EOF
 require'nvim-tree'.setup {
   view = {
@@ -38,6 +6,20 @@ require'nvim-tree'.setup {
       list = {
           { key = "<C-e>", action = "" },
       }
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
+    },
+    icons = {
+      glyphs = { 
+        default = '',
+        folder =  {
+          arrow_closed = "",
+          arrow_open = "",
+        },
+      },
     }
   }
 }

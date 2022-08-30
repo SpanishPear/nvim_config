@@ -1,4 +1,3 @@
-
 " install and manage
 source $HOME/.config/nvim/plugins/plugins.vim
 " add shortcuts
