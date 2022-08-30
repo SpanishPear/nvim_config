@@ -209,7 +209,11 @@ cmp.setup({
 })
 
 -- setup definition jumping 
-require'goto-preview'.setup {}
+require'goto-preview'.setup {
+  post_open_hook = function(_, win)
+    vim.api.nvim_win_set_option(win, "winhighlight", "Normal:")
+  end
+}
 EOF
 
 " Set updatetime for CursorHold

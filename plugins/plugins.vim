@@ -97,7 +97,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'feline-nvim/feline.nvim'
 call plug#end()
 
-source $HOME/.config/nvim/plugins/rust-analyzer-lsp.vim
+source $HOME/.config/nvim/plugins/lsp_setup.vim
 source $HOME/.config/nvim/plugins/nvimtree.vim
 source $HOME/.config/nvim/plugins/barbar.vim
 source $HOME/.config/nvim/plugins/feline.vim
