@@ -1,9 +1,9 @@
 " autoinstall vim-plug, if not exists
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+"if empty(glob(data_dir . '/autoload/plug.vim'))
+ " silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 " install plugins
 call plug#begin('~/.vim/plugged')
@@ -83,8 +83,9 @@ call plug#begin('~/.vim/plugged')
 
 	"github copilot
 	Plug 'github/copilot.vim'
-    "rust
-    Plug 'rust-lang/rust.vim'
+  
+  "rust
+  Plug 'rust-lang/rust.vim'
     
   " Extentions to built-in LSP, for example, providing type inlay hints
   Plug 'nvim-lua/lsp_extensions.nvim'

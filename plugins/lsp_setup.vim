@@ -51,7 +51,7 @@ local on_attach = function(client, bufnr)
     map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
     map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
     
-    if client and client.resolved_capabilities.document_formatting then
+    if client and client.server_capabilities.documentFormattingProvider then
       vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -127,8 +127,8 @@ end
 
 nvim_lsp.tsserver.setup({
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        --client.resolved_capabilities.document_formatting = false
+        --client.resolved_capabilities.document_range_formatting = false
         local ts_utils = require("nvim-lsp-ts-utils")
         ts_utils.setup({})
         ts_utils.setup_client(client)
